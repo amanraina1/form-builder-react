@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "../App";
 // import FormsList from "../pages/FormsList";
-// import FormBuilder from "../components/Builder/FormBuilder";
+import FormBuilder from "../components/Builder/FormBuilder";
 // import FormRenderer from "../components/Renderer/FormRenderer";
 // import SubmissionsViewer from "../pages/SubmissionsViewer";
 import LoginPage from "../components/Auth/LoginPage";
@@ -21,22 +21,22 @@ export const router = createBrowserRouter([
       //       </RequireAuth>
       //     ),
       //   },
-      //   {
-      //     path: "builder",
-      //     element: (
-      //       <RequireAuth>
-      //         <FormBuilder />
-      //       </RequireAuth>
-      //     ),
-      //   },
-      //   {
-      //     path: "builder/edit/:id",
-      //     element: (
-      //       <RequireAuth>
-      //         <FormBuilder />
-      //       </RequireAuth>
-      //     ),
-      //   },
+      {
+        path: "builder",
+        element: (
+          <RequireAuth>
+            <FormBuilder />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "builder/edit/:id",
+        element: (
+          <RequireAuth>
+            <FormBuilder />
+          </RequireAuth>
+        ),
+      },
       //   {
       //     path: "renderer/:id",
       //     element: <FormRenderer />,

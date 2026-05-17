@@ -7,17 +7,17 @@ interface Props {
 }
 
 export const RequireAuth = ({ children }: Props) => {
-  const token = useAuthStore((s) => s.token);
-  const location = useLocation();
-  if (!token) {
-    const redirect = location.pathname + location.search;
-    return (
-      <Navigate
-        to={`/login?redirect=${encodeURIComponent(redirect)}`}
-        replace
-      />
-    );
-  }
+  //   const token = useAuthStore((s) => s.token);
+  //   const location = useLocation();
+  //   if (!token) {
+  //     const redirect = location.pathname + location.search;
+  //     return (
+  //       <Navigate
+  //         to={`/login?redirect=${encodeURIComponent(redirect)}`}
+  //         replace
+  //       />
+  //     );
+  //   }
   return <>{children}</>;
 };
 
