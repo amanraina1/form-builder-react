@@ -5,8 +5,8 @@ import App from "../App";
 // import FormRenderer from "../components/Renderer/FormRenderer";
 // import SubmissionsViewer from "../pages/SubmissionsViewer";
 import LoginPage from "../components/Auth/LoginPage";
-// import RegisterPage from "../components/Auth/RegisterPage";
-// import { GuestOnly, RequireAuth } from "./guards";
+import RegisterPage from "../components/Auth/RegisterPage";
+import { GuestOnly, RequireAuth } from "./guards";
 
 export const router = createBrowserRouter([
   {
@@ -53,19 +53,19 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: (
-          // <GuestOnly>
-          <LoginPage />
-          // </GuestOnly>
+          <GuestOnly>
+            <LoginPage />
+          </GuestOnly>
         ),
       },
-      //   {
-      //     path: "register",
-      //     element: (
-      //       <GuestOnly>
-      //         <RegisterPage />
-      //       </GuestOnly>
-      //     ),
-      //   },
+      {
+        path: "register",
+        element: (
+          <GuestOnly>
+            <RegisterPage />
+          </GuestOnly>
+        ),
+      },
     ],
   },
 ]);
