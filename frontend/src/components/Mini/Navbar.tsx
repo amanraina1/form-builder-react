@@ -2,9 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../../stores/auth";
 
 export default function Navbar() {
-  const { token, user, clear } = useAuthStore();
+  const { user, clear, isAuthenticated } = useAuthStore();
   const navigate = useNavigate();
-  const isAuthenticated = !!token;
 
   const logout = () => {
     clear();
@@ -18,7 +17,7 @@ export default function Navbar() {
           Form Builder
         </Link>
 
-        {isAuthenticated && (
+        {isAuthenticated() && (
           <ul className="flex gap-2">
             <Link to="/">
               <li className="p-2 hover:underline cursor-pointer">My Forms</li>
@@ -30,7 +29,7 @@ export default function Navbar() {
         )}
       </div>
 
-      {isAuthenticated ? (
+      {isAuthenticated() ? (
         <div className="flex items-center gap-3">
           <span className="text-sm text-gray-600">
             {user?.name || user?.email}

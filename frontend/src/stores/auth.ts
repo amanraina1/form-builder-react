@@ -21,7 +21,7 @@ interface AuthState {
   clear: () => void;
 }
 
-export const authStore = create<AuthState>((set, get) => ({
+export const useAuthStore = create<AuthState>((set, get) => ({
   token: localStorage.getItem(TOKEN_KEY),
   user: readUser(),
   isAuthenticated: () => !!get().token,

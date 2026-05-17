@@ -4,7 +4,7 @@ import App from "../App";
 // import FormBuilder from "../components/Builder/FormBuilder";
 // import FormRenderer from "../components/Renderer/FormRenderer";
 // import SubmissionsViewer from "../pages/SubmissionsViewer";
-// import LoginPage from "../components/Auth/LoginPage";
+import LoginPage from "../components/Auth/LoginPage";
 // import RegisterPage from "../components/Auth/RegisterPage";
 // import { GuestOnly, RequireAuth } from "./guards";
 
@@ -50,14 +50,14 @@ export const router = createBrowserRouter([
       //       </RequireAuth>
       //     ),
       //   },
-      //   {
-      //     path: "login",
-      //     element: (
-      //       <GuestOnly>
-      //         <LoginPage />
-      //       </GuestOnly>
-      //     ),
-      //   },
+      {
+        path: "login",
+        element: (
+          // <GuestOnly>
+          <LoginPage />
+          // </GuestOnly>
+        ),
+      },
       //   {
       //     path: "register",
       //     element: (
